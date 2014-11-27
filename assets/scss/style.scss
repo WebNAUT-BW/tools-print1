@@ -19,3 +19,54 @@
 ============================================ */
 
 @import "compass";
+
+#printArea {
+	position: relative;
+	width: 1000px;
+	height: 1414px;
+	margin: 50px auto;
+	border: 10px dotted #f00;
+	@media print {
+		&{
+			margin-top:0;
+			margin-bottom:0;
+			overflow: hidden;
+			border: none;
+		}
+	}
+}
+#beforeMessage {
+	margin-top: 300px;
+	text-align: center;
+	font-size: 30px;
+	color: #f00;
+}
+.disp {
+	position: absolute;
+	top: 0;
+	left: 0;
+	// width: 200px;
+	height: auto;
+}
+.clone {
+	position: absolute;
+	top: 0;
+	// &:nth-child(1){
+	// 	left: 300px;
+	// }
+	// &:nth-child(2){
+	// 	left: 600px;
+	// }
+	// &:nth-child(3){
+	// 	left: 300px;
+	// }
+	// &:nth-child(4){
+	// 	left: 600px;
+	// }
+	// &:nth-child(5){
+	// 	left: 300px;
+	// }
+}
+
+
+

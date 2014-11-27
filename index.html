@@ -9,20 +9,20 @@
 <title>Print1</title>
 <link rel="shortcut icon" href="/assets/img/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="/assets/img/apple-touch-icon.png">
-<link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="all">
-<link href="/assets/css/style.css" rel="stylesheet" media="all">
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" media="all">
+<link href="assets/css/style.css" rel="stylesheet" media="all">
 </head>
 <body>
 <div class="container">
 
-
-
-
-
-
+<div id="printArea" ondragover="onDragOver(event)">
+	<p id="beforeMessage">Drop Image File Here.</p>
+	<img src="" alt="" class="disp">
+</div>
 
 </div>
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/util.js"></script>
 </body>
 </html>
