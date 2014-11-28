@@ -21,7 +21,7 @@
 		<input type="text" ng-model="offsetCol" ng-change="changeOffsetCol(1,offsetCol)" placeholder="Enter a offset value">
 	</div>
 
-	<div id="printArea" class="" data-colnum="{{colNum}}">
+	<div id="printArea" ondragover="onDragOver(event)" data-colnum="{{colNum}}">
 		<p id="beforeMessage">Drop Image File Here.</p>
 		<img src="" alt="" class="disp">
 	</div>
