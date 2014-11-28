@@ -20,16 +20,26 @@
 
 @import "compass";
 
+body {
+	background-color: #000;
+	// @media print {
+	// 	&{
+	// 		zoom: 120%;
+	// 	}
+	// }
+}
+
 #printArea {
 	position: relative;
 	width: 1000px;
 	height: 1414px;
 	margin: 50px auto;
 	border: 10px dotted #f00;
+	background-color: #fff;
 	@media print {
 		&{
-			margin-top:0;
-			margin-bottom:0;
+			margin:0;
+			padding: 0;
 			overflow: hidden;
 			border: none;
 		}
@@ -50,26 +60,28 @@
 	left: 0;
 	// width: 200px;
 	height: auto;
+	cursor: all-scroll;
 }
 .clone {
 	position: absolute;
 	top: 0;
-	// &:nth-child(1){
-	// 	left: 300px;
-	// }
-	// &:nth-child(2){
-	// 	left: 600px;
-	// }
-	// &:nth-child(3){
-	// 	left: 300px;
-	// }
-	// &:nth-child(4){
-	// 	left: 600px;
-	// }
-	// &:nth-child(5){
-	// 	left: 300px;
-	// }
 }
 
-
-
+.l-controller {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 0 0;
+	background-color: rgba(200,200,200,0.7);
+	z-index: 10;
+	@media print {
+		&{
+			display: none;
+		}
+	}
+}
+.l-controller-inner {
+	width: 1000px;
+	margin: 0 auto;
+}

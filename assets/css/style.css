@@ -16,28 +16,34 @@
 ※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
 ============================================ */
 /* line 23, ../scss/style.scss */
+body {
+  background-color: #000;
+}
+
+/* line 32, ../scss/style.scss */
 #printArea {
   position: relative;
   width: 1000px;
   height: 1414px;
   margin: 50px auto;
   border: 10px dotted #f00;
+  background-color: #fff;
 }
 @media print {
-  /* line 30, ../scss/style.scss */
+  /* line 40, ../scss/style.scss */
   #printArea {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
     border: none;
   }
 }
-/* line 37, ../scss/style.scss */
+/* line 47, ../scss/style.scss */
 #printArea.red {
   background-color: #f00;
 }
 
-/* line 41, ../scss/style.scss */
+/* line 51, ../scss/style.scss */
 #beforeMessage {
   margin-top: 300px;
   text-align: center;
@@ -45,16 +51,40 @@
   color: #f00;
 }
 
-/* line 47, ../scss/style.scss */
+/* line 57, ../scss/style.scss */
 .disp {
   position: absolute;
   top: 0;
   left: 0;
   height: auto;
+  cursor: all-scroll;
 }
 
-/* line 54, ../scss/style.scss */
+/* line 65, ../scss/style.scss */
 .clone {
   position: absolute;
   top: 0;
+}
+
+/* line 70, ../scss/style.scss */
+.l-controller {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 0;
+  background-color: rgba(200, 200, 200, 0.7);
+  z-index: 10;
+}
+@media print {
+  /* line 79, ../scss/style.scss */
+  .l-controller {
+    display: none;
+  }
+}
+
+/* line 84, ../scss/style.scss */
+.l-controller-inner {
+  width: 1000px;
+  margin: 0 auto;
 }

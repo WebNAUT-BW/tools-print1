@@ -1,4 +1,3 @@
-
 // var
 var colNum      = 3;              //列数
 var itemWidth   = 320;            //画像幅
@@ -64,14 +63,14 @@ function imgSetInit() {
 
 		var hvalMath = Math.floor(imgHeight / paHeight);
 		console.log('hvalMath=' + hvalMath);
-
-		for (var i = 0; i < hvalMath; i++) {
+		for (var i = 0; i < (colNum-1); i++) {
 			$_img.clone().addClass('clone').css(
 				{
-					'left':(320*(i+1)),
-					'top':(1414*(i+1)*(-1))
+					'left':(itemWidth*(i+1)),
+					'top':(1414*(i+1)*(-1)),
+					'width':itemWidth
 				}
-			).appendTo($('#printArea'));
+			).appendTo($('#printArea')).draggable();;
 		}
 	}
 }
@@ -80,35 +79,33 @@ function onDragOver(event) {
 	event.preventDefault();
 }
 
-	//画像幅変更処理
-	// function changeItemWidth(num) {
-	// }
-
-	//全体オフセット変更処理
-	// function changeOffsetAll(num) {
-	// 	alert(num);
-	// }
-
-	//各列オフセット変更処理
-	// function changeOffsetCol(col,num) {
-	// }
-
-	// 画像ドラッグ中のイベント
-	// $_pa.on("dragover",function(e){
-	// 	if (!$(this).hasClass('dragover')) {
-	// 		$(this).addClass('dragover');
-	// 		console.log('add dragover');
-	// 	}
-	// 	e.preventDefault();
-	// });
-
-
 var myApp = angular.module('print1', []);
 myApp.controller('print1Controller', ['$scope', function($scope){
+
+	$scope.colNum = 3;
+	$scope.itemWidth = 320;
+
+	//列数変更処理
+	$scope.changeColNum = function(num){
+		// $scope.spice = spice;
+		$_pa.attr('data-colnum',num);
+		colNum = num;
+	};
+
+	//画像幅変更処理
+	$scope.changeItemWidth = function(num){
+		console.log(num);
+		$('img').css('width',num);
+		itemWidth = num;
+	};
 
 	//全体オフセット変更処理
 	$scope.changeOffsetAll = function(num){
 		// $scope.spice = spice;
+		$_img.each(function(){
+			var _top = $(this).css('top');
+			$(this).css('top',_top+num);
+		});
 		console.log(num);
 	};
 
@@ -118,4 +115,19 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 		console.log(num);
 	};
 
+	//クリア
+	$scope.clear = function(){
+		clear();
+	};
+
 }]);
+
+$(function() {
+    $_img.draggable();
+});
+
+function clear() {
+	$('#beforeMessage').show();
+	$_pa.find('img').remove();
+	$_pa.append('<img src="" alt="" class="disp">');
+}
