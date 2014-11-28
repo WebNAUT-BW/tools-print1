@@ -32,8 +32,12 @@
     border: none;
   }
 }
+/* line 37, ../scss/style.scss */
+#printArea.red {
+  background-color: #f00;
+}
 
-/* line 38, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
 #beforeMessage {
   margin-top: 300px;
   text-align: center;
@@ -41,7 +45,7 @@
   color: #f00;
 }
 
-/* line 44, ../scss/style.scss */
+/* line 47, ../scss/style.scss */
 .disp {
   position: absolute;
   top: 0;
@@ -49,7 +53,7 @@
   height: auto;
 }
 
-/* line 51, ../scss/style.scss */
+/* line 54, ../scss/style.scss */
 .clone {
   position: absolute;
   top: 0;

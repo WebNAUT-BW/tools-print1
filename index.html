@@ -15,14 +15,21 @@
 <body>
 <div class="container">
 
-<div id="printArea" ondragover="onDragOver(event)">
-	<p id="beforeMessage">Drop Image File Here.</p>
-	<img src="" alt="" class="disp">
-</div>
+	<div ng-app="print1" ng-controller="print1Controller">
+		<input type="text" ng-model="colNum" placeholder="Enter a col num">
+		<input type="text" ng-model="offsetAll" ng-change="changeOffsetAll(offsetAll)" placeholder="Enter a offset value">
+		<input type="text" ng-model="offsetCol" ng-change="changeOffsetCol(1,offsetCol)" placeholder="Enter a offset value">
+	</div>
+
+	<div id="printArea" class="" data-colnum="{{colNum}}">
+		<p id="beforeMessage">Drop Image File Here.</p>
+		<img src="" alt="" class="disp">
+	</div>
 
 </div>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/angular.min.js"></script>
 <script src="assets/js/util.js"></script>
 </body>
 </html>
