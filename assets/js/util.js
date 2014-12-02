@@ -7,7 +7,7 @@ var paWidth     = 1000;           //印刷エリア幅
 var paHeight    = 1414;           //印刷エリア高さ
 var $_img       = $('img.disp');  //画像
 var $_pa        = $('#printArea');//印刷エリア
-
+var storage     = localStorage;
 
 // File API Dropイベント追加
 $(function () {
@@ -23,7 +23,7 @@ $(function () {
 // Drop領域にドロップした際のファイルのプロパティ情報読み取り処理
 function onDrop(event) {
 	var files = event.dataTransfer.files;
-
+	$('#beforeMessage').text('loading...');
 	for (var i = 0; i < files.length; i++) {
 		var file = files[i],            // 2. files配列にファイルが入っています
 		fileReader = new FileReader();   // 4. ファイルを読み込むFileReaderオブジェクト
@@ -63,9 +63,13 @@ function imgSetInit() {
 
 		var hvalMath = Math.floor(imgHeight / paHeight);
 		console.log('hvalMath=' + hvalMath);
+
+		//1枚目の画像幅指定
+		$_img.css('width',itemWidth);
 		for (var i = 0; i < (colNum-1); i++) {
 			$_img.clone().addClass('clone').css(
 				{
+					//2枚目以降のスタイル設定
 					'left':(itemWidth*(i+1)),
 					'top':(1414*(i+1)*(-1)),
 					'width':itemWidth
@@ -85,11 +89,23 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 	$scope.colNum = 3;
 	$scope.itemWidth = 320;
 
+	var getcolNum = storage.getItem("print1-colNum");
+	if(getcolNum){
+		$scope.colNum = getcolNum;
+		colNum = getcolNum;
+	}
+	var getitemWidth = storage.getItem("print1-itemWidth");
+	if(getitemWidth){
+		$scope.itemWidth = getitemWidth;
+		itemWidth = getitemWidth;
+	}
+
 	//列数変更処理
 	$scope.changeColNum = function(num){
 		// $scope.spice = spice;
 		$_pa.attr('data-colnum',num);
 		colNum = num;
+		storage.setItem("print1-colNum", num);
 	};
 
 	//画像幅変更処理
@@ -97,6 +113,7 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 		console.log(num);
 		$('img').css('width',num);
 		itemWidth = num;
+		storage.setItem("print1-itemWidth", num);
 	};
 
 	//全体オフセット変更処理
@@ -127,7 +144,8 @@ $(function() {
 });
 
 function clear() {
-	$('#beforeMessage').show();
-	$_pa.find('img').remove();
-	$_pa.append('<img src="" alt="" class="disp">');
+	window.location.reload();
+	// $('#beforeMessage').show();
+	// $_pa.find('img').remove();
+	// $_pa.append('<img src="" alt="" class="disp">');
 }
