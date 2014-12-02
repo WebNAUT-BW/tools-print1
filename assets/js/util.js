@@ -1,4 +1,3 @@
-// var
 var colNum      = 3;              //列数
 var itemWidth   = 320;            //画像幅
 var offsetAll   = 0;              //全体オフセット
@@ -18,7 +17,6 @@ $(function () {
 		window.alert("本ブラウザではFile APIが使えません");
 	}
 });
-
 
 // Drop領域にドロップした際のファイルのプロパティ情報読み取り処理
 function onDrop(event) {
@@ -41,28 +39,23 @@ function onDrop(event) {
 	event.preventDefault();
 }
 
-
 //初期ドロップ処理
 function imgSetInit() {
 	var imgWidth = $_img.width(),
 	imgHeight = $_img.height();
-
 	var paWidth = $_pa.width(),
 	paHeight = $_pa.height();
-
-	console.log('imgWidth=' + imgWidth + ', imgHeight=' + imgHeight);
+	// console.log('imgWidth=' + imgWidth + ', imgHeight=' + imgHeight);
 
 	if (paHeight > imgHeight) {
 		console.log('imgHeight under');
 		$_img.clone().addClass('clone').appendTo($('#printArea'));
 	} else {
-		console.log('imgHeight over');
-
+		// console.log('imgHeight over');
 		var hval = (imgHeight / paHeight);
-		console.log('hval=' + hval);
-
 		var hvalMath = Math.floor(imgHeight / paHeight);
-		console.log('hvalMath=' + hvalMath);
+		// console.log('hval=' + hval);
+		// console.log('hvalMath=' + hvalMath);
 
 		//1枚目の画像幅指定
 		$_img.css('width',itemWidth);
@@ -110,7 +103,7 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 
 	//画像幅変更処理
 	$scope.changeItemWidth = function(num){
-		console.log(num);
+		// console.log(num);
 		$('img').css('width',num);
 		itemWidth = num;
 		storage.setItem("print1-itemWidth", num);
@@ -123,13 +116,13 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 			var _top = $(this).css('top');
 			$(this).css('top',_top+num);
 		});
-		console.log(num);
+		// console.log(num);
 	};
 
 	//各列オフセット変更処理
 	$scope.changeOffsetCol = function(col,num){
 		// $scope.spice = spice;
-		console.log(num);
+		// console.log(num);
 	};
 
 	//クリア
