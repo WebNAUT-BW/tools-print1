@@ -2,4 +2,5 @@
 *.coffee
 /package.json
 /node_modules/*
+/_素材
 /Gruntfile.js
