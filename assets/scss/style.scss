@@ -77,3 +77,18 @@
 	width: 1000px;
 	margin: 0 auto;
 }
+
+#slider {
+	margin-top: 10px;
+}
+
+.copyright {
+	font-size: 12px;
+	a {
+		color: #fff;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

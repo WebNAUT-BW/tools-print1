@@ -11,36 +11,31 @@
 <link rel="apple-touch-icon-precomposed" href="/assets/img/apple-touch-icon.png">
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="all">
 <link href="assets/css/style.css" rel="stylesheet" media="all">
+<link href="assets/css/jquery-ui.css" rel="stylesheet">
 </head>
 <body>
 <div class="l-container">
 	<div class="l-controller" ng-app="print1" ng-controller="print1Controller">
 		<div class="l-controller-inner">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-1">
 					<form class="form-horizontal" role="form">
-						<div class="form-group">
-							<label class="col-sm-4 control-label">colNum</label>
-							<div class="col-sm-8">
-								<input class="form-control" type="text" ng-model="colNum" ng-change="changeColNum(colNum)" placeholder="Enter a col num">
-							</div>
-						</div>
+						<input id="inputItemWidth" class="form-control" type="text" ng-model="itemWidth" ng-change="changeItemWidth(itemWidth)" placeholder="Enter a item width">
 					</form>
-				</div>
-				<div class="col-sm-3">
-					<form class="form-horizontal" role="form">
-						<div class="form-group">
-							<label class="col-sm-4 control-label">itemWidth</label>
-							<div class="col-sm-8">
-								<input class="form-control" type="text" ng-model="itemWidth" ng-change="changeItemWidth(itemWidth)" placeholder="Enter a item width">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="col-sm-4">
 				</div>
 				<div class="col-sm-2">
-					<button type="button" class="btn btn-danger btn-block" ng-click="clear()">Clear</button>
+					<div id="slider"></div>
+				</div>
+				<div class="col-sm-2">
+					<div class="btn-group" role="group" aria-label="...">
+						<button type="button" class="btn btn-lg btn-primary" ng-click="wPrint()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></button>
+						<button type="button" class="btn btn-lg btn-danger" ng-click="clear()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+					</div>
+				</div>
+				<div class="col-sm-3">
+				</div>
+				<div class="col-sm-4">
+					<p class="copyright text-right"><a href="">WebNAUT by beeworks</a><br>Copyright (c) 2014 Beeworks Co., Ltd All rights reserved</p>
 				</div>
 			</div>
 		</div>
@@ -50,8 +45,8 @@
 		<img src="" alt="" class="disp">
 	</div>
 </div>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+<script src="assets/js/jquery-1.9.1.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/angular.min.js"></script>
 <script src="assets/js/util.js"></script>

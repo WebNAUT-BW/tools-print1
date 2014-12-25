@@ -84,3 +84,22 @@
   width: 1000px;
   margin: 0 auto;
 }
+
+/* line 81, ../scss/style.scss */
+#slider {
+  margin-top: 10px;
+}
+
+/* line 85, ../scss/style.scss */
+.copyright {
+  font-size: 12px;
+}
+/* line 87, ../scss/style.scss */
+.copyright a {
+  color: #fff;
+  text-decoration: underline;
+}
+/* line 90, ../scss/style.scss */
+.copyright a:hover {
+  text-decoration: none;
+}
