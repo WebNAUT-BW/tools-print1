@@ -34,7 +34,7 @@ $(function () {
 	//イベント
 	slider.on("slide",function(event,ui){
 		var value = ui.value;
-		$('img').css('width',value);
+		$('#printArea img').css('width',value);
 		$('#inputItemWidth').val(value);
 	} );
 	slider.on("slidechange",function(event,ui){
@@ -42,6 +42,13 @@ $(function () {
 		storage.setItem("print1-sliderValue", value);
 		storage.setItem("print1-itemWidth", value);
 	} );
+
+	//初回表示時のみ説明モーダルを表示
+	var initialFlag = storage.getItem("print1-initial");
+	if(!initialFlag){
+		$('#myModal').modal();
+		storage.setItem("print1-initial",true);
+	}
 });
 
 //Angular.js関連
@@ -73,6 +80,11 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 	//印刷
 	$scope.wPrint = function(){
 		window.print();
+	};
+
+	//情報
+	$scope.info = function(){
+		$('#myModal').modal();
 	};
 }]);
 

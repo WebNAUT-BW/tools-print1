@@ -15,7 +15,14 @@
 　編集しないようご注意ください。by Beeworks
 ※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
 ============================================ */
-/* line 23, ../scss/style.scss */
+@media print {
+  /* line 24, ../scss/style.scss */
+  .github {
+    display: none;
+  }
+}
+
+/* line 29, ../scss/style.scss */
 #printArea {
   position: relative;
   width: 1000px;
@@ -25,7 +32,7 @@
   border: 10px dotted #f00;
 }
 @media print {
-  /* line 31, ../scss/style.scss */
+  /* line 37, ../scss/style.scss */
   #printArea {
     margin: 0;
     padding: 0;
@@ -33,12 +40,12 @@
     border: none;
   }
 }
-/* line 38, ../scss/style.scss */
+/* line 44, ../scss/style.scss */
 #printArea.red {
   background-color: #f00;
 }
 
-/* line 42, ../scss/style.scss */
+/* line 48, ../scss/style.scss */
 #beforeMessage {
   padding-top: 300px;
   text-align: center;
@@ -46,7 +53,7 @@
   color: #f00;
 }
 
-/* line 48, ../scss/style.scss */
+/* line 54, ../scss/style.scss */
 .disp {
   position: absolute;
   top: 0;
@@ -55,13 +62,13 @@
   cursor: all-scroll;
 }
 
-/* line 56, ../scss/style.scss */
+/* line 62, ../scss/style.scss */
 .clone {
   position: absolute;
   top: 0;
 }
 
-/* line 61, ../scss/style.scss */
+/* line 67, ../scss/style.scss */
 .l-controller {
   position: fixed;
   left: 0;
@@ -73,33 +80,54 @@
   z-index: 10;
 }
 @media print {
-  /* line 71, ../scss/style.scss */
+  /* line 77, ../scss/style.scss */
   .l-controller {
     display: none;
   }
 }
 
-/* line 76, ../scss/style.scss */
+/* line 82, ../scss/style.scss */
 .l-controller-inner {
   width: 1000px;
   margin: 0 auto;
 }
 
-/* line 81, ../scss/style.scss */
+/* line 87, ../scss/style.scss */
 #slider {
   margin-top: 10px;
 }
 
-/* line 85, ../scss/style.scss */
-.copyright {
+/* line 91, ../scss/style.scss */
+#copyright {
   font-size: 12px;
 }
-/* line 87, ../scss/style.scss */
-.copyright a {
+/* line 93, ../scss/style.scss */
+#copyright a {
   color: #fff;
   text-decoration: underline;
 }
-/* line 90, ../scss/style.scss */
-.copyright a:hover {
+/* line 96, ../scss/style.scss */
+#copyright a:hover {
   text-decoration: none;
+}
+
+/* line 101, ../scss/style.scss */
+#sns {
+  margin-top: 8px;
+  padding: 0;
+}
+/* line 104, ../scss/style.scss */
+#sns .sns-twitter,
+#sns .sns-facebook {
+  float: left;
+  width: 110px;
+  display: block;
+  overflow: hidden;
+}
+
+/* line 112, ../scss/style.scss */
+#btn-clear,
+#btn-print,
+#btn-info {
+  width: 33.3%;
 }
