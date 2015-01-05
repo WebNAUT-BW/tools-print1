@@ -3,26 +3,20 @@
 *
 * Print1
 *
-* Copyright (c) 2014 Beeworks Co., Ltd All rights reserved
+* Copyright (c) 2015 Beeworks Co., Ltd All rights reserved
 *
 * @version : 0
 * @author  : k_shimoda@beeworks.co.jp
 *
 */
-/*! ===========================================
-※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
-　このCSSファイルはSassから生成されていますので、
-　編集しないようご注意ください。by Beeworks
-※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
-============================================ */
 @media print {
-  /* line 24, ../scss/style.scss */
+  /* line 17, ../scss/style.scss */
   .github {
     display: none;
   }
 }
 
-/* line 29, ../scss/style.scss */
+/* line 22, ../scss/style.scss */
 #printArea {
   position: relative;
   width: 1000px;
@@ -32,7 +26,7 @@
   border: 10px dotted #f00;
 }
 @media print {
-  /* line 37, ../scss/style.scss */
+  /* line 30, ../scss/style.scss */
   #printArea {
     margin: 0;
     padding: 0;
@@ -40,12 +34,12 @@
     border: none;
   }
 }
-/* line 44, ../scss/style.scss */
+/* line 37, ../scss/style.scss */
 #printArea.red {
   background-color: #f00;
 }
 
-/* line 48, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
 #beforeMessage {
   padding-top: 300px;
   text-align: center;
@@ -53,7 +47,7 @@
   color: #f00;
 }
 
-/* line 54, ../scss/style.scss */
+/* line 47, ../scss/style.scss */
 .disp {
   position: absolute;
   top: 0;
@@ -62,13 +56,13 @@
   cursor: all-scroll;
 }
 
-/* line 62, ../scss/style.scss */
+/* line 54, ../scss/style.scss */
 .clone {
   position: absolute;
   top: 0;
 }
 
-/* line 67, ../scss/style.scss */
+/* line 59, ../scss/style.scss */
 .l-controller {
   position: fixed;
   left: 0;
@@ -80,43 +74,43 @@
   z-index: 10;
 }
 @media print {
-  /* line 77, ../scss/style.scss */
+  /* line 69, ../scss/style.scss */
   .l-controller {
     display: none;
   }
 }
 
-/* line 82, ../scss/style.scss */
+/* line 74, ../scss/style.scss */
 .l-controller-inner {
   width: 1000px;
   margin: 0 auto;
 }
 
-/* line 87, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 #slider {
   margin-top: 10px;
 }
 
-/* line 91, ../scss/style.scss */
+/* line 83, ../scss/style.scss */
 #copyright {
   font-size: 12px;
 }
-/* line 93, ../scss/style.scss */
+/* line 85, ../scss/style.scss */
 #copyright a {
   color: #fff;
   text-decoration: underline;
 }
-/* line 96, ../scss/style.scss */
+/* line 88, ../scss/style.scss */
 #copyright a:hover {
   text-decoration: none;
 }
 
-/* line 101, ../scss/style.scss */
+/* line 93, ../scss/style.scss */
 #sns {
   margin-top: 8px;
   padding: 0;
 }
-/* line 104, ../scss/style.scss */
+/* line 96, ../scss/style.scss */
 #sns .sns-twitter,
 #sns .sns-facebook {
   float: left;
@@ -125,7 +119,7 @@
   overflow: hidden;
 }
 
-/* line 112, ../scss/style.scss */
+/* line 104, ../scss/style.scss */
 #btn-clear,
 #btn-print,
 #btn-info {

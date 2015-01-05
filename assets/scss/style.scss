@@ -4,19 +4,12 @@
 *
 * Print1
 *
-* Copyright (c) 2014 Beeworks Co., Ltd All rights reserved
+* Copyright (c) 2015 Beeworks Co., Ltd All rights reserved
 *
 * @version : 0
 * @author  : k_shimoda@beeworks.co.jp
 *
 */
-
-/*! ===========================================
-※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
-　このCSSファイルはSassから生成されていますので、
-　編集しないようご注意ください。by Beeworks
-※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
-============================================ */
 
 @import "compass";
 .github {
@@ -55,7 +48,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	// width: 200px;
 	height: auto;
 	cursor: all-scroll;
 }
