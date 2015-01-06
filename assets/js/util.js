@@ -110,26 +110,24 @@ function onDrop(event) {
 
 //初期ドロップ処理
 function imgSetInit() {
-	var imgWidth = $_img.width(),
-	imgHeight = $_img.height();
-	var paWidth = $_pa.width(),
-	paHeight = $_pa.height();
+	var imgWidth = $_img.width();
+	var imgHeight = $_img.height();
+	var paWidth = $_pa.width();
+	var paHeight = $_pa.height();
+	var hval = (imgHeight / imgWidth) * itemWidth; //幅変更後の画像高さ
+	var hvalMath = Math.floor(hval / paHeight); //コピー枚数（印刷エリアに対して画像高さの余り値）
 
-	if (paHeight > imgHeight) {
-		$_img.clone().addClass('clone').appendTo($('#printArea'));
-	} else {
-		//画像コピー枚数計算用
-		var hval = (imgHeight / paHeight);
-		var hvalMath = Math.floor(imgHeight / paHeight);
+	//1枚目の画像幅指定
+	$_img.css('width',itemWidth);
 
-		//1枚目の画像幅指定
-		$_img.css('width',itemWidth);
-		for (var i = 0; i < hvalMath; i++) {
+	//2枚目以降複製する場合（コピー枚数が1以上の場合）
+	if (hvalMath >= 1) {
+		for (var i = 1; i <= hvalMath; i++) {
 			$_img.clone().addClass('clone').css(
 				{
 					//2枚目以降のスタイル設定
-					'left':(itemWidth*(i+1)),
-					'top':(paHeight*(i+1)*(-1)),
+					'left':(itemWidth*(i)),
+					'top':(paHeight*(i)*(-1)),
 					'width':itemWidth
 				}
 			).appendTo($('#printArea')).draggable();;
