@@ -66,7 +66,7 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 	//画像幅変更処理
 	$scope.changeItemWidth = function(num){
 		// console.log(num);
-		$('img').css('width',num);
+		$('#printArea img').css('width',num);
 		itemWidth = num;
 		storage.setItem("print1-itemWidth",num);
 		slider.slider("option","value",num);//スライダーに値をセット
