@@ -1,5 +1,5 @@
 # Print1
-縦に長い画像を1枚で印刷する際に自動分割してレイアウトするWebアプリ。  
+縦に長い画像を1枚で印刷する際に自動分割してレイアウトするツール。  
 スマートフォンサイトなど縦に長いデザインデータを確認する際に活用頂けます。
 
 http://webnaut.jp/tools/print1/
@@ -15,3 +15,6 @@ Google Chrome 最新版
 
 ## 紹介記事
 http://webnaut.jp/markup/1125.html
+
+## License
+This software is released under the MIT License, see LICENSE.txt.
