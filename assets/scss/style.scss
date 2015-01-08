@@ -94,7 +94,8 @@
 	margin-top: 8px;
 	padding: 0;
 	.sns-twitter,
-	.sns-facebook {
+	.sns-facebook,
+	.sns-hatena {
 		float: left;
 		width: 110px;
 		display: block;
@@ -105,4 +106,21 @@
 #btn-print,
 #btn-info {
 	width: 33.3%;
+}
+.row-control-slider {
+	width: 150px;
+	padding-left: 0;
+}
+.row-control-form {
+	width: 50px;
+	padding-left: 0;
+	padding-right: 0;
+}
+.row-control-sns {
+	width: 360px;
+	padding-right: 0;
+}
+.row-control-copyright {
+	width: 295px;
+	padding-left: 0;
 }

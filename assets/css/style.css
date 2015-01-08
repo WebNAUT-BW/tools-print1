@@ -112,16 +112,42 @@
 }
 /* line 96, ../scss/style.scss */
 #sns .sns-twitter,
-#sns .sns-facebook {
+#sns .sns-facebook,
+#sns .sns-hatena {
   float: left;
   width: 110px;
   display: block;
   overflow: hidden;
 }
 
-/* line 104, ../scss/style.scss */
+/* line 105, ../scss/style.scss */
 #btn-clear,
 #btn-print,
 #btn-info {
   width: 33.3%;
+}
+
+/* line 110, ../scss/style.scss */
+.row-control-slider {
+  width: 150px;
+  padding-left: 0;
+}
+
+/* line 114, ../scss/style.scss */
+.row-control-form {
+  width: 50px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 119, ../scss/style.scss */
+.row-control-sns {
+  width: 360px;
+  padding-right: 0;
+}
+
+/* line 123, ../scss/style.scss */
+.row-control-copyright {
+  width: 295px;
+  padding-left: 0;
 }
