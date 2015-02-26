@@ -86,8 +86,30 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 	$scope.info = function(){
 		$('#myModal').modal();
 	};
-}]);
 
+	//テキスト追加
+	$scope.addText = function(){
+		$('#printArea').append('<div class="draggableTextFrame"><textarea></textarea><a href="#" class="draggableTextFrame-close">×</a></div>');
+		$('.draggableTextFrame').draggable();
+	};
+
+	//マーク追加
+	$scope.addMark = function(){
+		$('#printArea').append('<div class="draggableMarkFrame"><a href="#" class="draggableMarkFrame-close">×</a></div>');
+		$('.draggableMarkFrame').draggable();
+		$('.draggableMarkFrame').resizable();
+	};
+	//Close
+	$(document).on("click", ".draggableTextFrame-close", function(){
+		console.log('draggableTextFrame-close');
+		$(this).parents('.draggableTextFrame').hide();
+	});
+	$(document).on("click", ".draggableMarkFrame-close", function(){
+		console.log('draggableMarkFrame-close');
+		$(this).parents('.draggableMarkFrame').hide();
+	});
+
+}]);
 
 // Drop領域にドロップした際のファイルのプロパティ情報読み取り処理
 function onDrop(event) {
@@ -130,7 +152,7 @@ function imgSetInit() {
 					'top':(paHeight*(i)*(-1)),
 					'width':itemWidth
 				}
-			).appendTo($('#printArea')).draggable();;
+			).appendTo($('#printArea')).draggable();
 		}
 	}
 }
