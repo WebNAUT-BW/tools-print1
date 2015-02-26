@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 *
 * Print1
@@ -35,8 +36,14 @@
 #snsArea .snsArea-facebook {
   margin-bottom: 10px;
 }
+@media print {
+  /* line 37, ../scss/style.scss */
+  #snsArea {
+    display: none;
+  }
+}
 
-/* line 40, ../scss/style.scss */
+/* line 42, ../scss/style.scss */
 #printArea {
   position: relative;
   width: 1000px;
@@ -46,7 +53,7 @@
   border: 10px dotted #f00;
 }
 @media print {
-  /* line 48, ../scss/style.scss */
+  /* line 50, ../scss/style.scss */
   #printArea {
     margin: 0;
     padding: 0;
@@ -54,12 +61,12 @@
     border: none;
   }
 }
-/* line 55, ../scss/style.scss */
+/* line 57, ../scss/style.scss */
 #printArea.red {
   background-color: #f00;
 }
 
-/* line 59, ../scss/style.scss */
+/* line 61, ../scss/style.scss */
 #beforeMessage {
   padding-top: 300px;
   text-align: center;
@@ -67,7 +74,7 @@
   color: #f00;
 }
 
-/* line 65, ../scss/style.scss */
+/* line 67, ../scss/style.scss */
 .disp {
   position: absolute;
   top: 0;
@@ -76,13 +83,13 @@
   cursor: all-scroll;
 }
 
-/* line 72, ../scss/style.scss */
+/* line 74, ../scss/style.scss */
 .clone {
   position: absolute;
   top: 0;
 }
 
-/* line 77, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 .l-controller {
   position: fixed;
   left: 0;
@@ -94,38 +101,38 @@
   z-index: 10;
 }
 @media print {
-  /* line 87, ../scss/style.scss */
+  /* line 89, ../scss/style.scss */
   .l-controller {
     display: none;
   }
 }
 
-/* line 92, ../scss/style.scss */
+/* line 94, ../scss/style.scss */
 .l-controller-inner {
   width: 1000px;
   margin: 0 auto;
 }
 
-/* line 97, ../scss/style.scss */
+/* line 99, ../scss/style.scss */
 #slider {
   margin-top: 10px;
 }
 
-/* line 101, ../scss/style.scss */
+/* line 103, ../scss/style.scss */
 #copyright {
   font-size: 12px;
 }
-/* line 103, ../scss/style.scss */
+/* line 105, ../scss/style.scss */
 #copyright a {
   color: #fff;
   text-decoration: underline;
 }
-/* line 106, ../scss/style.scss */
+/* line 108, ../scss/style.scss */
 #copyright a:hover {
   text-decoration: none;
 }
 
-/* line 111, ../scss/style.scss */
+/* line 113, ../scss/style.scss */
 #btn-clear,
 #btn-print,
 #btn-info {
@@ -135,32 +142,32 @@
   padding-bottom: 1px;
 }
 
-/* line 119, ../scss/style.scss */
+/* line 121, ../scss/style.scss */
 .row-control-slider {
   width: 150px;
   padding-left: 0;
 }
 
-/* line 123, ../scss/style.scss */
+/* line 125, ../scss/style.scss */
 .row-control-form {
   width: 50px;
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 128, ../scss/style.scss */
+/* line 130, ../scss/style.scss */
 .row-control-sns {
   width: 360px;
   padding-right: 0;
 }
 
-/* line 132, ../scss/style.scss */
+/* line 134, ../scss/style.scss */
 .row-control-copyright {
   width: 295px;
   padding-left: 0;
 }
 
-/* line 138, ../scss/style.scss */
+/* line 140, ../scss/style.scss */
 .draggableTextFrame {
   position: absolute;
   top: 20px;
@@ -172,23 +179,23 @@
   border: 2px dotted #f00;
 }
 @media print {
-  /* line 148, ../scss/style.scss */
+  /* line 150, ../scss/style.scss */
   .draggableTextFrame {
     border: none;
   }
 }
-/* line 152, ../scss/style.scss */
+/* line 154, ../scss/style.scss */
 .draggableTextFrame textarea {
   padding: 10px;
   background-color: transparent;
   border: none;
   color: #f00;
 }
-/* line 158, ../scss/style.scss */
+/* line 160, ../scss/style.scss */
 .draggableTextFrame:hover .draggableTextFrame-close {
   display: block;
 }
-/* line 161, ../scss/style.scss */
+/* line 163, ../scss/style.scss */
 .draggableTextFrame .draggableTextFrame-close {
   display: none;
   position: absolute;
@@ -198,13 +205,13 @@
   font-size: 20px;
 }
 @media print {
-  /* line 169, ../scss/style.scss */
+  /* line 171, ../scss/style.scss */
   .draggableTextFrame .draggableTextFrame-close {
     display: none;
   }
 }
 
-/* line 175, ../scss/style.scss */
+/* line 177, ../scss/style.scss */
 .draggableMarkFrame {
   position: absolute;
   top: 20px;
@@ -214,11 +221,11 @@
   border: 2px solid #f00;
   display: inline-block;
 }
-/* line 183, ../scss/style.scss */
+/* line 185, ../scss/style.scss */
 .draggableMarkFrame:hover .draggableMarkFrame-close {
   display: block;
 }
-/* line 186, ../scss/style.scss */
+/* line 188, ../scss/style.scss */
 .draggableMarkFrame .draggableMarkFrame-close {
   display: none;
   position: absolute;
@@ -228,7 +235,7 @@
   font-size: 20px;
 }
 @media print {
-  /* line 194, ../scss/style.scss */
+  /* line 196, ../scss/style.scss */
   .draggableMarkFrame .draggableMarkFrame-close {
     display: none;
   }

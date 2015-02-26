@@ -33,8 +33,10 @@
 	.snsArea-facebook {
 		margin-bottom: 10px;
 	}
-	.snsArea-hatena {
-
+	@media print {
+		&{
+			display: none;
+		}
 	}
 }
 #printArea {
