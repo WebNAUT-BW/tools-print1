@@ -46,8 +46,15 @@ $(function () {
 	//初回表示時のみ説明モーダルを表示
 	var initialFlag = storage.getItem("print1-initial");
 	if(!initialFlag){
-		$('#myModal').modal();
+		$('#infoModal').modal();
 		storage.setItem("print1-initial",true);
+	}
+
+	//更新情報モーダルを表示
+	var newsFlag = storage.getItem("print1-news150226");
+	if(!newsFlag){
+		$('#newsModal').modal();
+		storage.setItem("print1-news150226",true);
 	}
 });
 
@@ -84,7 +91,7 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 
 	//情報
 	$scope.info = function(){
-		$('#myModal').modal();
+		$('#infoModal').modal();
 	};
 
 	//テキスト追加
