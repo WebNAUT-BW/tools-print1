@@ -17,33 +17,6 @@
 }
 
 /* line 22, ../scss/style.scss */
-#snsArea {
-  position: absolute;
-  right: 0;
-  top: 150px;
-  width: 100px;
-  padding: 10px;
-  background-color: #eee;
-  -moz-border-radius: 10px 0 0 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px 0 0 10px;
-}
-/* line 30, ../scss/style.scss */
-#snsArea .snsArea-twitter {
-  margin-bottom: 10px;
-}
-/* line 33, ../scss/style.scss */
-#snsArea .snsArea-facebook {
-  margin-bottom: 10px;
-}
-@media print {
-  /* line 37, ../scss/style.scss */
-  #snsArea {
-    display: none;
-  }
-}
-
-/* line 42, ../scss/style.scss */
 #printArea {
   position: relative;
   width: 1000px;
@@ -53,7 +26,7 @@
   border: 10px dotted #f00;
 }
 @media print {
-  /* line 50, ../scss/style.scss */
+  /* line 30, ../scss/style.scss */
   #printArea {
     margin: 0;
     padding: 0;
@@ -61,12 +34,12 @@
     border: none;
   }
 }
-/* line 57, ../scss/style.scss */
+/* line 37, ../scss/style.scss */
 #printArea.red {
   background-color: #f00;
 }
 
-/* line 61, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
 #beforeMessage {
   padding-top: 300px;
   text-align: center;
@@ -74,7 +47,7 @@
   color: #f00;
 }
 
-/* line 67, ../scss/style.scss */
+/* line 47, ../scss/style.scss */
 .disp {
   position: absolute;
   top: 0;
@@ -83,13 +56,13 @@
   cursor: all-scroll;
 }
 
-/* line 74, ../scss/style.scss */
+/* line 54, ../scss/style.scss */
 .clone {
   position: absolute;
   top: 0;
 }
 
-/* line 79, ../scss/style.scss */
+/* line 59, ../scss/style.scss */
 .l-controller {
   position: fixed;
   left: 0;
@@ -101,142 +74,80 @@
   z-index: 10;
 }
 @media print {
-  /* line 89, ../scss/style.scss */
+  /* line 69, ../scss/style.scss */
   .l-controller {
     display: none;
   }
 }
 
-/* line 94, ../scss/style.scss */
+/* line 74, ../scss/style.scss */
 .l-controller-inner {
   width: 1000px;
   margin: 0 auto;
 }
 
-/* line 99, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 #slider {
   margin-top: 10px;
 }
 
-/* line 103, ../scss/style.scss */
+/* line 83, ../scss/style.scss */
 #copyright {
   font-size: 12px;
 }
-/* line 105, ../scss/style.scss */
+/* line 85, ../scss/style.scss */
 #copyright a {
   color: #fff;
   text-decoration: underline;
 }
-/* line 108, ../scss/style.scss */
+/* line 88, ../scss/style.scss */
 #copyright a:hover {
   text-decoration: none;
 }
 
-/* line 113, ../scss/style.scss */
+/* line 93, ../scss/style.scss */
+#sns {
+  margin-top: 8px;
+  padding: 0;
+}
+/* line 96, ../scss/style.scss */
+#sns .sns-twitter,
+#sns .sns-facebook,
+#sns .sns-hatena {
+  float: left;
+  width: 110px;
+  display: block;
+  overflow: hidden;
+}
+
+/* line 105, ../scss/style.scss */
 #btn-clear,
 #btn-print,
 #btn-info {
   width: 33.3%;
-  font-size: 20px;
-  padding-top: 3px;
-  padding-bottom: 1px;
 }
 
-/* line 121, ../scss/style.scss */
+/* line 110, ../scss/style.scss */
 .row-control-slider {
   width: 150px;
   padding-left: 0;
 }
 
-/* line 125, ../scss/style.scss */
+/* line 114, ../scss/style.scss */
 .row-control-form {
   width: 50px;
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 130, ../scss/style.scss */
+/* line 119, ../scss/style.scss */
 .row-control-sns {
   width: 360px;
   padding-right: 0;
 }
 
-/* line 134, ../scss/style.scss */
+/* line 123, ../scss/style.scss */
 .row-control-copyright {
   width: 295px;
   padding-left: 0;
-}
-
-/* line 140, ../scss/style.scss */
-.draggableTextFrame {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px 10px 30px;
-  display: inline-block;
-  cursor: move;
-  color: #f00;
-  border: 2px dotted #f00;
-}
-@media print {
-  /* line 150, ../scss/style.scss */
-  .draggableTextFrame {
-    border: none;
-  }
-}
-/* line 154, ../scss/style.scss */
-.draggableTextFrame textarea {
-  padding: 10px;
-  background-color: transparent;
-  border: none;
-  color: #f00;
-}
-/* line 160, ../scss/style.scss */
-.draggableTextFrame:hover .draggableTextFrame-close {
-  display: block;
-}
-/* line 163, ../scss/style.scss */
-.draggableTextFrame .draggableTextFrame-close {
-  display: none;
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-  color: #f00;
-  font-size: 20px;
-}
-@media print {
-  /* line 171, ../scss/style.scss */
-  .draggableTextFrame .draggableTextFrame-close {
-    display: none;
-  }
-}
-
-/* line 177, ../scss/style.scss */
-.draggableMarkFrame {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 200px;
-  height: 50px;
-  border: 2px solid #f00;
-  display: inline-block;
-}
-/* line 185, ../scss/style.scss */
-.draggableMarkFrame:hover .draggableMarkFrame-close {
-  display: block;
-}
-/* line 188, ../scss/style.scss */
-.draggableMarkFrame .draggableMarkFrame-close {
-  display: none;
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-  color: #f00;
-  font-size: 20px;
-}
-@media print {
-  /* line 196, ../scss/style.scss */
-  .draggableMarkFrame .draggableMarkFrame-close {
-    display: none;
-  }
 }

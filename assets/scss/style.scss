@@ -19,26 +19,6 @@
 		}
 	}
 }
-#snsArea {
-	position: absolute;
-	right: 0;
-	top: 150px;
-	width: 100px;
-	padding: 10px;
-	background-color: #eee;
-	@include border-radius(10px 0 0 10px);
-	.snsArea-twitter {
-		margin-bottom: 10px;
-	}
-	.snsArea-facebook {
-		margin-bottom: 10px;
-	}
-	@media print {
-		&{
-			display: none;
-		}
-	}
-}
 #printArea {
 	position: relative;
 	width: 1000px;
@@ -110,13 +90,22 @@
 		}
 	}
 }
+#sns {
+	margin-top: 8px;
+	padding: 0;
+	.sns-twitter,
+	.sns-facebook,
+	.sns-hatena {
+		float: left;
+		width: 110px;
+		display: block;
+		overflow: hidden;
+	}
+}
 #btn-clear,
 #btn-print,
 #btn-info {
 	width: 33.3%;
-	font-size: 20px;
-	padding-top: 3px;
-	padding-bottom: 1px;
 }
 .row-control-slider {
 	width: 150px;
@@ -134,68 +123,4 @@
 .row-control-copyright {
 	width: 295px;
 	padding-left: 0;
-}
-
-//Draggable Elements
-.draggableTextFrame {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	padding: 10px 10px 30px;
-	display: inline-block;
-	cursor: move;
-	color: #f00;
-	border: 2px dotted #f00;
-	@media print {
-		&{
-			border: none;
-		}
-	}
-	textarea {
-		padding: 10px;
-		background-color: transparent;
-		border: none;
-		color: #f00;
-	}
-	&:hover .draggableTextFrame-close {
-		display: block;
-	}
-	.draggableTextFrame-close {
-		display: none;
-		position: absolute;
-		bottom: 5px;
-		right: 10px;
-		color: #f00;
-		font-size: 20px;
-		@media print {
-			&{
-				display: none;
-			}
-		}
-	}
-}
-.draggableMarkFrame {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	width: 200px;
-	height: 50px;
-	border: 2px solid #f00;
-	display: inline-block;
-	&:hover .draggableMarkFrame-close {
-		display: block;
-	}
-	.draggableMarkFrame-close {
-		display: none;
-		position: absolute;
-		bottom: 5px;
-		right: 10px;
-		color: #f00;
-		font-size: 20px;
-		@media print {
-			&{
-				display: none;
-			}
-		}
-	}
 }
