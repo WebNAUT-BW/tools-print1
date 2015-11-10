@@ -1,10 +1,12 @@
-var itemWidth   = 320;            //画像幅
-var paWidth     = 1000;           //印刷エリア幅
-var paHeight    = 1414;           //印刷エリア高さ
-var $_img       = $('img.disp');  //画像
-var $_pa        = $('#printArea');//印刷エリア
+var INIT_ITEM_WIDTH = 320;
+
+var itemWidth   = INIT_ITEM_WIDTH;
+var paWidth     = $('#printArea').width();           //印刷エリア幅
+var paHeight    = $('#printArea').height();           //印刷エリア高さ
 var storage     = localStorage;
+var $_img       = $('img.disp').css({visibility: 'hidden'});  //画像
 var $slider;
+var $beforeMessage = $('#beforeMessage');
 
 $(function () {
 	// File API Dropイベント追加
@@ -14,9 +16,6 @@ $(function () {
 	} else {
 		window.alert("本ブラウザではFile APIが使えません");
 	}
-
-	//画像ドラッグ設定
-	$_img.draggable();
 
 	//スライダー関連
 	var sliderValue = parseInt(storage.getItem("print1-sliderValue"),10) || 300;
@@ -51,19 +50,15 @@ var myApp = angular.module('print1', []);
 myApp.controller('print1Controller', ['$scope', function($scope){
 
 	//値の初期化
-	$scope.itemWidth = 320;
-	var getitemWidth = storage.getItem("print1-itemWidth");
-	if(getitemWidth){
-		$scope.itemWidth = getitemWidth;
-		itemWidth = getitemWidth;
-	}
+	$scope.itemWidth = storage.getItem("print1-itemWidth") || INIT_ITEM_WIDTH;
+	itemWidth = $scope.itemWidth;
 
 	//画像幅変更処理
 	$scope.changeItemWidth = function(num){
 		$('#printArea img').css('width',num);
 		itemWidth = num;
 		storage.setItem("print1-itemWidth",num);
-		slider.slider("option","value",num);//スライダーに値をセット
+		$slider.slider("option","value",num);//スライダーに値をセット
 	};
 
 	//クリア（リロード）
@@ -85,8 +80,11 @@ myApp.controller('print1Controller', ['$scope', function($scope){
 
 // Drop領域にドロップした際のファイルのプロパティ情報読み取り処理
 var onDrop = function(event) {
+
 	var files = event.dataTransfer.files;
-	$('#beforeMessage').text('loading...');
+	var watcher = null;
+	$beforeMessage.text('loading...');
+
 	for (var i = 0; i < files.length; i++) {
 		var file = files[i],
 		fileReader = new FileReader();
@@ -94,28 +92,36 @@ var onDrop = function(event) {
 		fileReader.onload = function(event) {
 			// 読み込んだデータをimgに設定
 			$_img.attr('src', event.target.result);
-
-			$('#beforeMessage').hide();
-			imgSetInit();
+			watcher = window.setInterval(function(){
+				if($_img.width() > 0 && $_img.height() > 0){
+					imgSetInit();
+					$beforeMessage.hide();
+					window.clearInterval(watcher);
+				}
+			},10);
+			
 		};
+
 		fileReader.readAsDataURL(file);
 	}
 	event.preventDefault();
+
 }
 
 //初期ドロップ処理
 var imgSetInit = function() {
+
 	var imgWidth = $_img.width();
 	var imgHeight = $_img.height();
-	var paWidth = $_pa.width();
-	var paHeight = $_pa.height();
-	console.log(imgWidth,imgHeight);
 	var hval = (imgHeight / imgWidth) * itemWidth; //幅変更後の画像高さ
 	var hvalMath = Math.floor(hval / paHeight); //コピー枚数（印刷エリアに対して画像高さの余り値）
-	console.log(hval);
-	console.log(hvalMath);
 	//1枚目の画像幅指定
-	$_img.css('width',itemWidth);
+	$_img
+	.draggable()
+	.css({
+		width: itemWidth,
+		visibility: 'visible'
+	});
 
 	//2枚目以降複製する場合（コピー枚数が1以上の場合）
 	if (hvalMath >= 1) {
@@ -127,9 +133,10 @@ var imgSetInit = function() {
 					'top':(paHeight*(i)*(-1)),
 					'width':itemWidth
 				}
-			).appendTo($('#printArea')).draggable();;
+			).appendTo($('#printArea')).draggable();
 		}
 	}
+
 }
 
 var onDragOver = function(event) {
