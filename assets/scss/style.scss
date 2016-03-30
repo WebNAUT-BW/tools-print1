@@ -124,3 +124,38 @@
 	width: 295px;
 	padding-left: 0;
 }
+
+/*LPバナー設置*/
+.bnrBox {
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+}
+.bnrBox_bwOrder {
+	.bnrBox_bwOrder__link, .bnrBox_bwOrder__txt {
+		display: inline;
+	}
+	.bnrBox_bwOrder__link {
+		margin-bottom: 8px;
+		margin-left: 35px;
+	}
+	line-height: 54px;
+	height: 54px;
+	text-align: center;
+	background: -moz-linear-gradient(left top, #ef696a, #f99066 40%, #f99066 60%, #ef696a);
+	background: -webkit-gradient(linear, left top, right bottom, from(#ef696a),color-stop(0.4, #f99066), color-stop(0.6, #f99066),to(#ef696a));
+	background: -ms-linear-gradient(left top, #ef696a, #f99066 40%, #f99066 60%, #ef696a); /* IE */
+	background-color: #f99066\9;
+	font-size: 17px;
+    font-family: 'Nova Round', cursive;
+	.bnrBox_bwOrder_st{
+		font-size: 25px;
+	}
+	.bnrBox_bwOrder_sb {
+		font-size: 17px;
+	}
+	img {
+		margin-bottom: 8px;
+	}
+}
